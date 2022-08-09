@@ -10,6 +10,5 @@ function App() {
     </React.Fragment>
   );
 }
-/*testing */
 
 export default App;
