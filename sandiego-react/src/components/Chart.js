@@ -1,40 +1,21 @@
 import React from 'react';
 import ChartRow from './ChartRow';
-
-
-// const [usersState, setUsers] = useState([]); 
-
-	
-// useEffect (() => {
-//   fetch('http://localhost:3080/api/users')    
-//  .then(response => response.json())
-//  .then(data => setUsers (data))
-//  .catch((error) => console.log(error))
-//  }
-
-//  , [])
-
-let tableRowsData = [
-    // {
-    //     Nombre: usersState.name,
-    //     Email: usersState,
-    //     Categoría: usersState.category,
-
-    // },
-    {
-        Title: 'Alicia en el país de las maravillas',
-        Length: '142',
-        Rating: '4.8',
-        Categories: ['Drama','Acción','Comedia'],
-        Awards: 3
-    },
-    
-]
-
+import { useState, useEffect} from 'react'
 
 function Chart (){
+
+    const [usersState, setUsers] = useState([]); 
+
+    	
+    useEffect (() => {
+        fetch('http://localhost:3080/api/users')    
+        .then(response => response.json())
+        .then(data => setUsers(data.users))
+        .catch((error) => console.log(error))
+        }
+        , [])
+
     return (
-        /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
                 <div className="table-responsive">
@@ -48,8 +29,8 @@ function Chart (){
                         </thead>
                         <tbody>
                             {
-                            tableRowsData.map( ( row , i) => {
-                                return <ChartRow { ...row} key={i}/>
+                            usersState.map( ( user , i) => {
+                                return <ChartRow { ...user} key={i}/>
                             })
                             }
 

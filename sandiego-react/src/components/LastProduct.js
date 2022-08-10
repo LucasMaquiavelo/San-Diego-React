@@ -5,17 +5,17 @@ import { useState, useEffect} from 'react'
 function LastProduct(){
 
     
-	const [productsState, setProducts] = useState([]); 
+	const [productsState, setProducts] = useState([])
 
-	
+    const lastProduct = productsState
+
     useEffect (() => {
-      fetch('http://localhost:3080/api/products/16')    
+      fetch('http://localhost:3080/api/products/18')    
      .then(response => response.json())
-     .then(data => setProducts (data.product))
+     .then(data => setProducts(data.product))
      .catch((error) => console.log(error))
-     }
-
-     , [])
+    }
+    , [])
  
 
     return(
@@ -26,11 +26,11 @@ function LastProduct(){
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                        <h3>{productsState.name}</h3>
+                        <h3>{lastProduct.name}</h3>
                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Úlitmo producto agregado"/>
                     </div>
-                    <p>{productsState.description}</p>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
+                    <p>{lastProduct.description}</p>
+                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View product detail</a>
                 </div>
             </div>
         </div>

@@ -4,8 +4,6 @@ import ContentWrapper from './ContentWrapper';
 import AllProducts from './AllProducts';
 import LastProduct from './LastProduct';
 import ContentRowProducts from './ContentRowProducts';
-import SearchMovies from './SearchMovies';
-import Home from './home';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
@@ -38,22 +36,6 @@ function SideBar(){
             </ul>
             {/*<!-- End of Sidebar -->*/}
 
-            {/*<!-- Microdesafio 1 -->*/}
-            {/*<!--<Route exact path="/">
-                <ContentWrapper />
-            </Route>
-            <Route path="/AllProducts">
-                <AllProducts />
-            </Route>
-            <Route path="/LastProduct">
-                <LastProduct />
-            </Route>
-            <Route path="/ContentRowProducts">
-                <ContentRowProducts />
-            </Route>*/}
-            {/*<!-- End Microdesafio 1 -->*/}
-
-            {/*<!-- End Microdesafio 2 -->*/}
             <Switch>
                 <Route exact path="/">
                     <ContentWrapper />
@@ -61,17 +43,11 @@ function SideBar(){
                 <Route path="/AllProducts">
                     <AllProducts />
                 </Route>
-                <Route path="/products">
-                    <Home />
-                </Route>
                 <Route path="/LastProduct">
                     <LastProduct />
                 </Route>
                 <Route path="/ContentRowProducts">
                     <ContentRowProducts />
-                </Route>
-                <Route path="/SearchMovies">
-                    <SearchMovies />
                 </Route>
                 <Route component={NotFound} />
             </Switch>
