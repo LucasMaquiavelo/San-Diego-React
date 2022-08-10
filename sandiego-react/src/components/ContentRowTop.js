@@ -12,7 +12,7 @@ function ContentRowTop(){
 						<h1 className="h3 mb-0 text-gray-800">San Diego Dashboard</h1>
 					</div>
 				
-					{/*<!-- Content Row Movies-->*/}
+					{/*<!-- Content Row-->*/}
 					<ContentRowProducts />
 					<ContentRowCenter />
 					<Chart />
