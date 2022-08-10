@@ -1,5 +1,5 @@
 import React from 'react';
-import imagenFondo from '../assets/images/Skate-woodo.png';
+import imagenFondo from '../assets/images/holder-babylon.png';
 import { useState, useEffect} from 'react'
 
 function LastProduct(){
